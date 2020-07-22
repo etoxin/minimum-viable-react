@@ -1,13 +1,12 @@
 import React, { FC } from "react";
-import { Typography, Layout } from "antd";
-
-import { Header } from "../components/Header";
-
-const { Title } = Typography;
 
 export const Home: FC = () => (
-  <Layout className="layout">
-    <Header />
-    <Title level={2}>Home</Title>
-  </Layout>
+  <section className="hero is-dark">
+    <div className="hero-body">
+      <p className="title">Home</p>
+      <p className="subtitle">
+        Minimum Viable React is a boilerplate for React Hooks applications.
+      </p>
+    </div>
+  </section>
 );

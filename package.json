@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/etoxin/minimum-viable-react#readme",
   "dependencies": {
-    "antd": "^4.4.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"
