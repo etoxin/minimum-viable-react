@@ -7,27 +7,31 @@ import { AppProvider } from "./hooks/appProvider";
 import { appReducer } from "./reducers/appReducer";
 
 import { Home } from "./routes/Home";
-import { Page } from "./routes/Page";
+import { ChangeTheme } from "./routes/ChangeTheme";
 import { Header } from "./components/Header";
 
 const initialState: State = {
+  theme: "dark",
   primaryTheme: "is-black",
   secondaryTheme: "is-dark",
 };
 
-export const App = () => (
-  <AppProvider value={useReducer(appReducer, initialState)}>
-    <Router>
-      <Switch>
-        <Route path="/page">
-          <Header />
-          <Page />
-        </Route>
-        <Route path="/">
-          <Header />
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
-  </AppProvider>
-);
+export const App = () => {
+  const state = useReducer(appReducer, initialState);
+  return (
+    <AppProvider value={state}>
+      <Router>
+        <Switch>
+          <Route path="/change-theme">
+            <Header />
+            <ChangeTheme />
+          </Route>
+          <Route path="/">
+            <Header />
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    </AppProvider>
+  );
+};
