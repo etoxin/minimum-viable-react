@@ -1,2 +1,1 @@
 # minimum-viable-react
-

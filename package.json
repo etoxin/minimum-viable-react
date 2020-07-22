@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "prettier": "npx prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/etoxin/minimum-viable-react/issues"
   },
-  "homepage": "https://github.com/etoxin/minimum-viable-react#readme"
+  "homepage": "https://github.com/etoxin/minimum-viable-react#readme",
+  "dependencies": {
+    "antd": "^4.4.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5",
+    "typescript": "^3.9.7"
+  }
 }
