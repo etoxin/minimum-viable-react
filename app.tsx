@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { State } from "./defs";
+import { AppState } from "./defs";
 
 import { AppProvider } from "./hooks/appProvider";
 import { appReducer } from "./reducers/appReducer";
@@ -10,10 +10,10 @@ import { Home } from "./routes/Home";
 import { ChangeTheme } from "./routes/ChangeTheme";
 import { Header } from "./components/Header";
 
-const initialState: State = {
+const initialState: AppState = {
   theme: "dark",
-  primaryTheme: "is-black",
-  secondaryTheme: "is-dark",
+  primaryTheme: "is-dark",
+  secondaryTheme: "is-black",
 };
 
 export const App = () => {

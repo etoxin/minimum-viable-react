@@ -6,8 +6,6 @@ import { useTheme } from "../hooks/useTheme";
 export const Header: FC = () => {
   const { primary } = useTheme();
 
-  console.log(primary);
-
   return (
     <nav className={`navbar ${primary}`}>
       <div className="navbar-brand">

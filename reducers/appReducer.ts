@@ -1,7 +1,6 @@
-import { State, Actions } from "../defs";
+import { AppState, Actions } from "../defs";
 
-export const appReducer = (state: State, action: Actions) => {
-  console.log(action);
+export const appReducer = (state: AppState, action: Actions): AppState => {
   switch (action.type) {
     case "INIT_APP":
       return {
@@ -11,8 +10,8 @@ export const appReducer = (state: State, action: Actions) => {
       return {
         ...state,
         theme: "dark",
-        primaryTheme: "is-black",
-        secondaryTheme: "is-dark",
+        primaryTheme: "is-dark",
+        secondaryTheme: "is-black",
       };
     case "SET_THEME_LIGHT":
       return {
@@ -25,8 +24,8 @@ export const appReducer = (state: State, action: Actions) => {
       return {
         ...state,
         theme: "blue",
-        primaryTheme: "is-white",
-        secondaryTheme: "is-link",
+        primaryTheme: "is-link",
+        secondaryTheme: "is-white",
       };
     default:
       throw new Error("reducer error");

@@ -1,7 +1,9 @@
-export interface State {
-  theme: "dark" | "light";
-  primaryTheme: "is-black";
-  secondaryTheme: "is-dark";
+type BulmaThemes = "is-light" | "is-dark" | "is-white" | "is-link" | "is-black";
+
+export interface AppState {
+  theme: "dark" | "light" | "blue";
+  primaryTheme: BulmaThemes;
+  secondaryTheme: BulmaThemes;
 }
 
 export interface Actions {
