@@ -3,7 +3,7 @@ import { useTheme } from "../hooks/useTheme";
 interface Props {
   theme: "dark" | "light" | "blue";
 }
-export const ThemeButton: FC<Props> = ({ theme }) => {
+export function ThemeButton({ theme }): FC<Props> {
   const { primary, changeTheme, isTheme } = useTheme();
   const css = isTheme(theme) ? primary + " is-selected" : "";
   return (
@@ -15,4 +15,4 @@ export const ThemeButton: FC<Props> = ({ theme }) => {
       {theme}
     </button>
   );
-};
+}

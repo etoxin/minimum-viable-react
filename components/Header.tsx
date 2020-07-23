@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 import { useNavigation } from "../hooks/useNavigation";
 
-export const Header: FC = () => {
+export default function Header(): FC {
   const { primary } = useTheme();
   const { isActive, onClick, closeNavigation } = useNavigation();
 
@@ -52,4 +52,4 @@ export const Header: FC = () => {
       </div>
     </nav>
   );
-};
+}

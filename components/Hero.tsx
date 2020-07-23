@@ -6,7 +6,7 @@ interface Props {
   subTitle: string;
 }
 
-export const Hero: FC<Props> = ({ title, subTitle }) => {
+export default function Hero({ title, subTitle }): FC<Props> {
   const { secondary } = useTheme();
   return (
     <section className={`hero ${secondary}`}>
@@ -16,4 +16,4 @@ export const Hero: FC<Props> = ({ title, subTitle }) => {
       </div>
     </section>
   );
-};
+}

@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import { Hero } from "../components/Hero";
+import Hero from "../components/Hero";
 import { ThemeButton } from "../components/ThemeButton";
 
-export const ChangeTheme: FC = () => {
+export default function ChangeTheme(): FC {
   return (
-    <React.Fragment>
+    <>
       <Hero
         title="Change the Theme"
         subTitle="You can change the theme of the app here."
@@ -16,6 +16,6 @@ export const ChangeTheme: FC = () => {
           <ThemeButton theme="blue" />
         </div>
       </section>
-    </React.Fragment>
+    </>
   );
-};
+}

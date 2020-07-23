@@ -6,9 +6,9 @@ import { AppState } from "./defs";
 import { AppProvider } from "./hooks/appProvider";
 import { appReducer } from "./reducers/appReducer";
 
-import { Home } from "./routes/Home";
-import { ChangeTheme } from "./routes/ChangeTheme";
-import { Header } from "./components/Header";
+import Home from "./routes/Home";
+import ChangeTheme from "./routes/ChangeTheme";
+import Header from "./components/Header";
 
 const initialState: AppState = {
   theme: "dark",
@@ -17,7 +17,7 @@ const initialState: AppState = {
   isNavActive: false,
 };
 
-export const App = () => {
+export function App() {
   const state = useReducer(appReducer, initialState);
   return (
     <AppProvider value={state}>
@@ -35,4 +35,4 @@ export const App = () => {
       </Router>
     </AppProvider>
   );
-};
+}
