@@ -6,11 +6,12 @@ Working Demo: [https://minimum-viable-react.vercel.app](https://minimum-viable-r
 
 ### Folder structure
 
-- `components` React functional components. No logic in these components. 
+- `components` React functional components. No logic in these components.
 - `hooks` Custom React Hooks. All logic in here.
 - `reducers` React reducers. State manipulations.
 - `routes` react-router page routes. All pages here and add route to: `./app.tsx`
 
 ### Todo:
+
 - API call
 - state `localstorage` sync

@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { AppContext } from "./appProvider";
-import { State } from "../defs";
+import { AppState } from "../defs";
 
 export const useAppContext = () => {
   const appContext = useContext(AppContext);
   return {
-    state: appContext[0] as State,
+    state: appContext[0] as AppState,
     dispatch: appContext[1],
   };
 };

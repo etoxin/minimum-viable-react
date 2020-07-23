@@ -2,9 +2,11 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { useTheme } from "../hooks/useTheme";
+import { useNavigation } from "../hooks/useNavigation";
 
 export const Header: FC = () => {
   const { primary } = useTheme();
+  const { isActive, onClick, closeNavigation } = useNavigation();
 
   return (
     <nav className={`navbar ${primary}`}>
@@ -21,14 +23,29 @@ export const Header: FC = () => {
           />
           <strong>&nbsp;MVR</strong>
         </a>
+        <a
+          onClick={onClick}
+          role="button"
+          className={`navbar-burger burger ${isActive}`}
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </a>
       </div>
 
-      <div className="navbar-menu">
+      <div className={`navbar-menu ${isActive}`}>
         <div className="navbar-start">
-          <Link to="/" className="navbar-item">
+          <Link to="/" onClick={closeNavigation} className="navbar-item">
             Home
           </Link>
-          <Link to="/change-theme" className="navbar-item">
+          <Link
+            to="/change-theme"
+            onClick={closeNavigation}
+            className="navbar-item"
+          >
             Change Theme
           </Link>
         </div>

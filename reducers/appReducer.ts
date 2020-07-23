@@ -27,6 +27,16 @@ export const appReducer = (state: AppState, action: Actions): AppState => {
         primaryTheme: "is-link",
         secondaryTheme: "is-white",
       };
+    case "TOGGLE_NAVIGATION":
+      return {
+        ...state,
+        isNavActive: !state.isNavActive,
+      };
+    case "CLOSE_NAVIGATION":
+      return {
+        ...state,
+        isNavActive: false,
+      };
     default:
       throw new Error("reducer error");
   }

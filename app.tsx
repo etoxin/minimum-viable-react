@@ -14,6 +14,7 @@ const initialState: AppState = {
   theme: "dark",
   primaryTheme: "is-dark",
   secondaryTheme: "is-black",
+  isNavActive: false,
 };
 
 export const App = () => {
