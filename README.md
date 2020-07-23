@@ -13,5 +13,4 @@ Working Demo: [https://minimum-viable-react.vercel.app](https://minimum-viable-r
 
 ### Todo:
 
-- API call
 - state `localstorage` sync

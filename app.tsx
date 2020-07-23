@@ -15,6 +15,7 @@ const initialState: AppState = {
   primaryTheme: "is-dark",
   secondaryTheme: "is-black",
   isNavActive: false,
+  newsItems: [],
 };
 
 export function App() {

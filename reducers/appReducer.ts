@@ -37,6 +37,11 @@ export const appReducer = (state: AppState, action: Actions): AppState => {
         ...state,
         isNavActive: false,
       };
+    case "SET_NEWS_ITEMS":
+      return {
+        ...state,
+        newsItems: action.newsItems,
+      };
     default:
       throw new Error("reducer error");
   }
