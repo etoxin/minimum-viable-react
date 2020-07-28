@@ -13,8 +13,7 @@ export default function Home(): FC {
       />
       <div className="content pl-3">
         <ol type="1">
-          {newsItems &&
-            newsItems.map((item) => <NewsItem {...item} />)}
+          {newsItems && newsItems.map((item) => <NewsItem {...item} />)}
         </ol>
       </div>
     </>

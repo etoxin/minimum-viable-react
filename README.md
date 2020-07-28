@@ -2,7 +2,7 @@
 
 Minimum Viable React is a boilerplate for React Hooks applications with Global State and Reducers. No need for Redux.
 
-Working Demo: [https://minimum-viable-react.vercel.app](https://minimum-viable-react.vercel.app)
+Working Demo: [https://minimum-viable-react.etoxin.vercel.app](https://minimum-viable-react.etoxin.vercel.app)
 
 ### Folder structure
 
