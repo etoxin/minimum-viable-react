@@ -14,3 +14,4 @@ Working Demo: [https://minimum-viable-react.etoxin.vercel.app](https://minimum-v
 ### Todo:
 
 - state `localstorage` sync
+- add Error boundary
