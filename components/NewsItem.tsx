@@ -1,16 +1,5 @@
 import React, { FC } from "react";
-import { NewsItem } from "../defs";
-
-export default function NewsItem({ title, url, score, by }): FC<NewsItem> {
-  return (
-    <li>
-      <a href={url}>{title}</a>
-      <p className="is-size-7">
-        {score} points by {by}.
-      </p>
-    </li>
-  );
-}
+import { useQuery } from "react-query";
 
 export function NewsSkeleton(): FC {
   const title = {
@@ -34,4 +23,30 @@ export function NewsSkeleton(): FC {
       <span style={subtitle} />
     </div>
   ));
+}
+
+export default function NewsItem({ id }): FC<string> {
+  const { data, isLoading } = useQuery(
+    ["news-item", id],
+    () =>
+      fetch(
+        `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+      ).then((resp) => resp.json()),
+    {
+      refetchInterval: 10000,
+    }
+  );
+
+  if (isLoading) {
+    return <NewsSkeleton key={id} />;
+  }
+
+  return (
+    <li key={id}>
+      <a href={data?.url}>{data?.title}</a>
+      <p className="is-size-7">
+        {data?.score} points by {data?.by}.
+      </p>
+    </li>
+  );
 }

@@ -4,15 +4,10 @@ import NewsItem, { NewsSkeleton } from "../components/NewsItem";
 import { useNews } from "../hooks/useNews";
 
 export default function Home(): FC {
-  const { newsItems } = useNews();
+  const { data, isLoading } = useNews();
 
-  const NewsContent: FC = () => (
-    <ol type="1">
-      {newsItems.map((item) => (
-        <NewsItem {...item} />
-      ))}
-    </ol>
-  );
+  const NewsContent = () =>
+    data.slice(0, 30).map((itemId) => <NewsItem id={itemId} />);
 
   return (
     <>
@@ -21,7 +16,7 @@ export default function Home(): FC {
         subTitle="Minimum Viable React is a boilerplate for React Hooks applications with Global State and Reducers. No need for Redux."
       />
       <div className="content pl-3">
-        {newsItems.length > 0 ? <NewsContent /> : <NewsSkeleton />}
+        <ol type="1">{!isLoading ? <NewsContent /> : <NewsSkeleton />}</ol>
       </div>
     </>
   );
