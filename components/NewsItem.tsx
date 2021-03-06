@@ -1,5 +1,12 @@
 import React, { FC } from "react";
 import { useQuery } from "react-query";
+import {
+  format,
+  formatDistance,
+  formatRelative,
+  subDays,
+  fromUnixTime,
+} from "date-fns";
 
 export function NewsSkeleton(): FC {
   const title = {
@@ -43,11 +50,16 @@ export default function NewsItem({ id }): FC<string> {
 
   return (
     <li key={id}>
-      <a href={data?.url}>{data?.title}</a>
+      <a href={data?.url}>
+        {data?.title}{" "}
+        <span className="is-size-7">({data?.url.split("/")[2]})</span>
+      </a>
       <p className="is-size-7">
         {data?.score} points by {data?.by}.{" "}
         <span className="is-size-7">
-          <em>({data?.url.split("/")[2]})</em>
+          {formatDistance(fromUnixTime(data?.time), new Date(), {
+            addSuffix: true,
+          })}
         </span>
       </p>
     </li>
