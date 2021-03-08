@@ -1,6 +1,6 @@
 {
   "name": "minimum-viable-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/etoxin/minimum-viable-react#readme",
   "dependencies": {
     "date-fns": "^2.19.0",
+    "prettier": "^2.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-query": "^3.12.0",
