@@ -2,7 +2,7 @@
   "name": "minimum-viable-react",
   "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "cssnano": "^4.1.10",
     "husky": "^5.1.3",
+    "parcel": "^2.0.0-beta.1",
     "pretty-quick": "^3.1.0",
     "typescript": "^3.9.7"
   },
