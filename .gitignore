@@ -19,5 +19,5 @@ dist
 .DS_*
 **/*.backup.*
 **/*.back.*
-
+.idea
 .vercel
