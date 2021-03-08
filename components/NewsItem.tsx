@@ -52,7 +52,7 @@ export default function NewsItem({ id }): FC<string> {
     <li key={id}>
       <a href={data?.url}>
         {data?.title}{" "}
-        <span className="is-size-7">({data?.url.split("/")[2]})</span>
+        <span className="is-size-7">({data?.url?.split("/")[2]})</span>
       </a>
       <p className="is-size-7">
         {data?.score} points by {data?.by}.{" "}
