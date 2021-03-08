@@ -7,13 +7,15 @@ export default function Home(): FC {
   const { data, isLoading } = useNews();
 
   const NewsContent = () =>
-    data.slice(0, 30).map((itemId) => <NewsItem id={itemId} />);
+    data
+      .slice(0, 30)
+      .map((itemId) => <NewsItem key={`nc-${itemId}`} id={itemId} />);
 
   return (
     <>
       <Hero
-        title="Home"
-        subTitle="Minimum Viable React is a boilerplate for React Hooks applications with Global State and Reducers. No need for Redux."
+        title="News"
+        subTitle="Social news"
       />
       <div className="content pl-3">
         <ol type="1">{!isLoading ? <NewsContent /> : <NewsSkeleton />}</ol>

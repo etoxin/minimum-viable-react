@@ -24,15 +24,15 @@ export function NewsSkeleton(): FC {
     margin: "0 1.5em .75em 1.5em",
   };
 
-  return [...Array(30)].map(() => (
-    <div>
+  return [...Array(30)].map((k, i) => (
+    <div key={`k${i}`}>
       <span style={title} />
       <span style={subtitle} />
     </div>
   ));
 }
 
-export default function NewsItem({ id }): FC<string> {
+export default function NewsItem({ id }): FC {
   const { data, isLoading } = useQuery(
     ["news-item", id],
     () =>
@@ -45,11 +45,11 @@ export default function NewsItem({ id }): FC<string> {
   );
 
   if (isLoading) {
-    return <NewsSkeleton key={id} />;
+    return <NewsSkeleton />;
   }
 
   return (
-    <li key={id}>
+    <li key={`n${id}`}>
       <a href={data?.url}>
         {data?.title}{" "}
         <span className="is-size-7">({data?.url?.split("/")[2]})</span>
