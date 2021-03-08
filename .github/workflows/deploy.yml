@@ -12,7 +12,7 @@ jobs:
         run: |
           npm ci
           npm run build
-      - uses: amondnet/vercel-action@v21
+      - uses: amondnet/vercel-action@v19
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
