@@ -2,7 +2,7 @@
   "name": "minimum-viable-react",
   "version": "1.0.1",
   "description": "",
-  "main": "index.html",
+  "main": "dist/index.html",
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html",
